@@ -1,0 +1,44 @@
+<header class="main-header">
+    <div class="container">
+        <h1 class="page-title">Depoimentos de Clientes</h1>
+
+        <ol class="breadcrumb pull-right">
+            <li><%= link_to "Home", root_path %></li>
+            <li class="active">Depoimentos</li>
+        </ol>
+    </div>
+</header>
+
+<div class="container animated fadeInUp animation-delay-10">
+    <div class="row">
+        <div class="col-md-8">
+            <% @depoimentos.each do |c| %>
+	            <blockquote class="blockquote-big">
+	                <p><%= c.message %></p>
+	                <footer><%= c.name %> <cite title="Source Title"><%= c.company %></cite></footer>
+	            </blockquote>
+	            <hr/>
+            <% end %>                        
+        </div>
+        <div class="col-md-4">
+        	<aside class="sidebar">                
+                <div class="block animated fadeInDown animation-delay-10">
+                  <h3 class="post-title no-margin-top"> <%= link_to 'Serviços', site_servicos_path %></h3>
+                  <ul class="media-list">
+                      <% @outros_servicos.each do |s| %>
+                          <li class="media">
+                              <%= link_to site_path(s.id), class:"pull-left" do %>
+                                  <%= image_tag s.picture(:thumb), class:"media-object", alt:"#{s.title}" %>                                            
+                              <% end %>
+                              <div class="media-body">
+                                  <p class="media-heading"><%= link_to s.title, site_path(s.id) %></p>
+                                  <small><%= s.slogan %></small>
+                              </div>
+                          </li>
+                      <% end %>                                
+                  </ul>
+                </div>
+            </aside> <!-- Sidebar -->
+        </div>
+    </div> <!-- row -->
+</div> <!-- container -->

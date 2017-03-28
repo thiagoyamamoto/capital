@@ -1,0 +1,145 @@
+<header class="main-header">
+    <div class="container">
+        <h1 class="page-title"><%= @servico.title %></h1>
+
+        <ol class="breadcrumb pull-right">
+         	<li><%= link_to "Home", root_path %></li>
+            <li><%= link_to "Todos Serviços", site_servicos_path %></li>
+            <li class="active"><%= @servico.title %></li>
+        </ol>
+    </div>
+</header>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-8">
+            <article class="post animated fadeInLeft animation-delay-8">
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        <h3 class="post-title"><span class="transicion"><%= @servico.title %></span></h3>
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <%= image_tag @servico.picture(:large), class:"img-post img-responsive", alt:"#{@servico.title}" %>                                
+                            </div>
+                            <div class="col-lg-6 post-content">
+                                <p><%= @servico.description %></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel-footer post-info-b">
+                        <div class="row">
+                            <div class="col-lg-10 col-md-9 col-sm-8">
+                                 <%= @servico.slogan %>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </article> <!-- post -->
+
+        </div> <!-- col-md-8 -->
+        <div class="col-md-4">
+            <aside class="sidebar">
+                
+                <div class="block animated fadeInDown animation-delay-10">
+                    <ul class="nav nav-tabs nav-tabs-ar" id="myTab2">
+                        <li class="active"><a href="#fav" data-toggle="tab"><i class="fa fa-glass"></i> Mais Serviços</a></li>
+                        <li><a href="#categories" data-toggle="tab"><i class="fa fa-list"></i> Todos Serviços</a></li>
+                    </ul>
+                    <div class="tab-content">
+                        <div class="tab-pane active" id="fav">
+                            <h3 class="post-title no-margin-top">Outros Serviços</h3>
+                            <ul class="media-list">
+                                <% @outros_servicos.each do |s| %>
+                                    <li class="media">
+                                        <%= link_to site_path(s.id), class:"pull-left" do %>
+                                            <%= image_tag s.picture(:thumb), class:"media-object", alt:"#{s.title}" %>                                            
+                                        <% end %>
+                                        <div class="media-body">
+                                            <p class="media-heading"><%= link_to s.title, site_path(s.id) %></p>
+                                            <small><%= s.slogan %></small>
+                                        </div>
+                                    </li>
+                                <% end %>                                
+                            </ul>
+                        </div>
+                        <div class="tab-pane" id="categories">
+                             <h3 class="post-title no-margin-top">Mapa de Serviços</h3>
+                             <ul class="simple">
+                                <% @servicos.each do |s| %>
+                                   <li> <%= link_to s.title, site_path(s.id) %></li>
+                                <% end %>
+                             </ul>
+                        </div>
+                </div>
+            </aside> <!-- Sidebar -->
+        </div>
+    </div> <!-- row -->
+    <% if (@servico.menus.any?) then %>
+        <hr/>
+    	<h2 class="post animated fadeInLeft animation-delay-8">Nossas Sugestões:</h2>
+    	<div class="row">
+            <% @servico.menus.each do |m| %>
+            <div class="col-md-4">
+                <article class="post animated fadeInLeft animation-delay-8">
+                    <div class="panel panel-default">
+                        <div class="panel-body">
+                            <h3 class="post-title">
+    							<span class="transicion"><%= m.title %></span></h3>
+                                <div>
+                                    <p><%= m.description %></p>
+    								<h5>Bebidas:</h5>
+    								<ul>
+                                        <% m.drinks.each do |d| %>
+        									<li><%= d.name %></li>    									
+                                        <% end %>
+    								</ul>
+    								<h5>Gastronômicos:</h5>
+    								<ul>
+    									<% m.foods.each do |food| %>
+                                            <li><%= food.name %></li>
+                                        <% end %>
+    								</ul>
+                                </div>
+                        </div>
+                    </div>
+                </article> <!-- post -->
+            </div> <!-- col-md-4 -->
+            <% end %>		
+    	</div><!-- row -->
+    	<p class="post animated fadeInLeft animation-delay-8">
+    		*Somente sugestão, as opções são customizadas de acordo com o cliente.
+    	</p>
+	<% end %>
+</div> <!-- container  -->
+
+<section class="section-lines">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 padding-40">
+                <p class="slogan text-center no-margin">Venha fazer o seu <span><%= @servico.title %></span> com a <span>Capital Gastronômica!</span> Estamos ansiosos para atendê-lo!</p>
+                <br>
+                <p class="text-center">
+                  <%= link_to site_contato_path, class:"button button-large button-plain button-border button-box" do  %>
+                    <i class="fa fa-comments"></i> Faça um orçamento de um <%= @servico.title %>! <b>Clique aqui!</b>
+                  <% end %>
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<script type="text/javascript">
+/* <![CDATA[ */
+var google_conversion_id = 978018489;
+var google_custom_params = window.google_tag_params;
+var google_remarketing_only = true;
+/* ]]> */
+</script>
+<script type="text/javascript" src="//www.googleadservices.com/pagead/conversion.js">
+</script>
+<noscript>
+<div style="display:inline;">
+<img height="1" width="1" style="border-style:none;" alt="" src="//googleads.g.doubleclick.net/pagead/viewthroughconversion/978018489/?value=0&amp;guid=ON&amp;script=0"/>
+</div>
+</noscript>

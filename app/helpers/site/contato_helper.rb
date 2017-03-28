@@ -1,0 +1,3 @@
+module Site::ContatoHelper
+	
+end

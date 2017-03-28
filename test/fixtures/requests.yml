@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  email: MyString
+  name: MyString
+  phone: MyString
+  guest: 
+  category_id: 
+  date: 2016-12-28
+  message: MyString
+  status: 
+
+two:
+  email: MyString
+  name: MyString
+  phone: MyString
+  guest: 
+  category_id: 
+  date: 2016-12-28
+  message: MyString
+  status: 

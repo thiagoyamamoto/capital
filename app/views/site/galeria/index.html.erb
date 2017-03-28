@@ -1,0 +1,186 @@
+<header class="main-header">
+    <div class="container">
+        <h1 class="page-title">Galeria de Fotos</h1>
+        <ol class="breadcrumb pull-right">
+            <li><%= link_to "Home", root_path %></li>
+            <li class="active">Galeria de Fotos</li>
+        </ol>
+    </div>
+</header>
+
+<div class="container">
+    <div class="portfolio-topbar hidden-sm hidden-xs">
+        <div class="row">
+            <div class="col-md-12">
+                <h4>Filtros</h4>
+                <ul class="portfolio-topbar-cats">
+                    <li><span class="filter" data-filter="all">Todos</span></li>
+                    <li><span class="filter" data-filter=".category-1">Pratos e Comidas</span></li>                
+                    <li><span class="filter" data-filter=".category-2">Bebidas</span></li>
+                    <li><span class="filter" data-filter=".category-3">Doces e Bolos</span></li>                    
+                    <li><span class="filter" data-filter=".category-4">Temático</span></li>                    
+                </ul>
+                <span class="topbar-border">&nbsp;</span>
+            </div>            
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="row" id="Container">
+                <div class="mix category-1 col-md-4 col-sm-6 col-xs-12">
+                    <a href="#" class="thumbnail">
+                        <%= image_tag "galeria/almoco-jantar.jpg" , alt:"Almoço e Jantar", class:"img-responsive"%>                        
+                    </a>                    
+                </div>
+                <div class="mix category-1 col-md-4 col-sm-6 col-xs-12">
+                    <a href="#" class="thumbnail">
+                        <%= image_tag "galeria/brunch.jpg" , alt:"Brunch", class:"img-responsive"%>                                                
+                    </a>                    
+                </div>
+                <div class="mix category-1 col-md-4 col-sm-6 col-xs-12">
+                    <a href="#" class="thumbnail">
+                        <%= image_tag "galeria/cafe-manha.jpg" , alt:"Café da manhã", class:"img-responsive"%>                                                
+                    </a>                    
+                </div>
+                <div class="mix category-1 col-md-4 col-sm-6 col-xs-12">
+                    <a href="#" class="thumbnail">
+                        <%= image_tag "galeria/coffee-break.jpg" , alt:"Coffee Break", class:"img-responsive"%>                                                
+                    </a>                    
+                </div>
+                <div class="mix category-4 col-md-4 col-sm-6 col-xs-12">
+                    <a href="#" class="thumbnail">
+                        <%= image_tag "galeria/comida-japonesa.jpg" , alt:"Comida japonesa", class:"img-responsive"%>                                                
+                    </a>                    
+                </div>
+                <div class="mix category-1 col-md-4 col-sm-6 col-xs-12">
+                    <a href="#" class="thumbnail">
+                        <%= image_tag "galeria/coquetel.jpg" , alt:"Coquetel", class:"img-responsive"%>                                                
+                    </a>                    
+                </div>
+                <div class="mix category-1 col-md-4 col-sm-6 col-xs-12">
+                    <a href="#" class="thumbnail">
+                        <%= image_tag "galeria/frutas.jpg" , alt:"Frutas", class:"img-responsive"%>                                                
+                    </a>                    
+                </div>
+                <div class="mix category-3 col-md-4 col-sm-6 col-xs-12">
+                    <a href="#" class="thumbnail">
+                        <%= image_tag "galeria/galeria-bolo-chocolate.jpg" , alt:"Bolo de chocolate", class:"img-responsive"%>                                                
+                    </a>                    
+                </div>               
+                <div class="mix category-3 col-md-4 col-sm-6 col-xs-12">
+                    <a href="#" class="thumbnail">
+                        <%= image_tag "galeria/galeria-doce.jpg" , alt:"Sobremesas", class:"img-responsive"%>                                                
+                    </a>                    
+                </div>
+                <div class="mix category-3 col-md-4 col-sm-6 col-xs-12">
+                    <a href="#" class="thumbnail">
+                        <%= image_tag "galeria/galeria-doce2.jpg" , alt:"Doces", class:"img-responsive"%>                                                
+                    </a>                    
+                </div>
+                <div class="mix category-1 col-md-4 col-sm-6 col-xs-12">
+                    <a href="#" class="thumbnail">
+                        <%= image_tag "galeria/galeria-entrada.jpg" , alt:"Entradas", class:"img-responsive"%>                                                
+                    </a>                    
+                </div>
+                <div class="mix category-4 col-md-4 col-sm-6 col-xs-12">
+                    <a href="#" class="thumbnail">
+                        <%= image_tag "galeria/galeria-festa-junina.jpg" , alt:"Festa junina", class:"img-responsive"%>                                                
+                    </a>                    
+                </div>
+                <div class="mix category-1 col-md-4 col-sm-6 col-xs-12">
+                    <a href="#" class="thumbnail">
+                        <%= image_tag "galeria/galeria-lanche.jpg" , alt:"Lanches", class:"img-responsive"%>                                                
+                    </a>                    
+                </div>
+                <div class="mix category-2 col-md-4 col-sm-6 col-xs-12">
+                    <a href="#" class="thumbnail">
+                        <%= image_tag "carrousel/tacas.jpg" , alt:"Taças", class:"img-responsive"%>                                                
+                    </a>                    
+                </div>
+                <div class="mix category-2 col-md-4 col-sm-6 col-xs-12">
+                    <a href="#" class="thumbnail">
+                        <%= image_tag "galeria/galeria-martini.jpg" , alt:"Martini", class:"img-responsive"%>                                                
+                    </a>                    
+                </div>
+                <div class="mix category-3 col-md-4 col-sm-6 col-xs-12">
+                    <a href="#" class="thumbnail">
+                        <%= image_tag "galeria/galeria-panqueca.jpg" , alt:"Panquecas", class:"img-responsive"%>                                                
+                    </a>                   
+                </div>
+                <div class="mix category-2 col-md-4 col-sm-6 col-xs-12">
+                    <a href="#" class="thumbnail">
+                        <%= image_tag "galeria/galeria-tacas.jpg" , alt:"Taças", class:"img-responsive"%>                                                
+                    </a>                    
+                </div>
+                <div class="mix category-4 col-md-4 col-sm-6 col-xs-12">
+                    <a href="#" class="thumbnail">
+                        <%= image_tag "galeria/galeria-tacos.jpg" , alt:"Tacos", class:"img-responsive"%>                                                
+                    </a>                    
+                </div>
+                <div class="mix category-3 col-md-4 col-sm-6 col-xs-12">
+                    <a href="#" class="thumbnail">
+                        <%= image_tag "galeria/galeria-bolo-casamento.jpg" , alt:"Bolo de casamento", class:"img-responsive"%>                                                
+                    </a>                    
+                </div>
+                <div class="mix category-3 col-md-4 col-sm-6 col-xs-12">
+                    <a href="#" class="thumbnail">
+                        <%= image_tag "galeria/galeria-bolo.jpg" , alt:"Bolo", class:"img-responsive"%>                                                
+                    </a>                    
+                </div>
+                <div class="mix category-3 col-md-4 col-sm-6 col-xs-12">
+                    <a href="#" class="thumbnail">
+                        <%= image_tag "galeria/galeria-bolo-laranja.jpg" , alt:"Bolo de laranja", class:"img-responsive"%>                                                
+                    </a>                    
+                </div>                
+            </div>
+        </div> <!-- col-md-9 -->
+    </div>
+</div> <!-- container -->
+
+<div class="modal fade" id="imagemodal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+        <h4 class="modal-title" id="myModalLabel">Galeria de Fotos</h4>
+      </div>
+      <div class="modal-body">
+         <img src="" id="imagepreview" alt="" class="img-responsive">
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div id="back-top">
+    <a href="#header"><i class="fa fa-chevron-up"></i></a>
+</div>
+
+<%= javascript_include_tag 'site/portfolio'%>
+
+<script type="text/javascript">
+    $(".mix a").on("click", function() {
+            $('#imagepreview').attr('src', $(this).find("img").attr('src')); // here asign the image to the modal when the user click the enlarge link
+            $('#imagemodal').modal('show'); // imagemodal is the id attribute assigned to the bootstrap modal, then i use the show function
+}); 
+</script>
+
+
+
+<script type="text/javascript">
+/* <![CDATA[ */
+var google_conversion_id = 978018489;
+var google_custom_params = window.google_tag_params;
+var google_remarketing_only = true;
+/* ]]> */
+</script>
+<script type="text/javascript" src="//www.googleadservices.com/pagead/conversion.js">
+</script>
+<noscript>
+<div style="display:inline;">
+<img height="1" width="1" style="border-style:none;" alt="" src="//googleads.g.doubleclick.net/pagead/viewthroughconversion/978018489/?value=0&amp;guid=ON&amp;script=0"/>
+</div>
+</noscript>

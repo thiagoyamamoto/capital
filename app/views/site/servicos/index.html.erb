@@ -1,0 +1,70 @@
+<header class="main-header">
+    <div class="container">
+        <h1 class="page-title">O que nós fazemos?</h1>
+
+        <ol class="breadcrumb pull-right">
+            <li><%= link_to "Home", root_path %></li>
+            <li><a class="active">Serviços</a></li>            
+        </ol>
+    </div>
+</header>
+
+<div class="container">
+    <section>
+        <div class="row">            
+            <% @servicos.each_with_index do |s, index| %>
+                <div class="col-lg-4 col-sm-6">
+                    <div class="pricign-box animated fadeInUp animation-delay-9 <%= 'pricign-box-pro' if index%2 == 0 %>">
+                        <div class="pricing-box-header">
+                            <h2><%= s.title %></h2>
+                            <p><%= truncate(s.slogan, length: 50) %></p>
+                        </div>
+                        <div class="pricing-box-content">
+                             <%= image_tag s.picture(:medium), class:"img-post img-responsive", alt:"${s.title}" %>                         
+                        </div>
+                        <div class="pricing-box-footer">
+                            <%= link_to "Detalhes", site_path(s.id), class:"btn btn-ar btn-lg btn-primary" %>                        
+                        </div>
+                    </div>
+                </div>
+            <% end %>
+            <div class="col-lg-4 col-sm-9">
+                <div class="pricign-box pricign-box-pro animated fadeInDown animation-delay-8">
+                    <div class="pricing-box-header">
+                        <h2>Seu Evento Customizado</h2>                        
+                        <p>Para qualquer ocasião...</p>
+                    </div>                    
+                    <div class="pricing-box-content">
+                        <br>
+                        <ul>                            
+                            <li><i class="fa fa-language"></i> Elaboração de Cardápios. </li>
+                            <li><i class="fa fa-cutlery"></i> Pratos diferenciados.</li>
+                            <li><i class="fa fa-cubes"></i>Decoração Arrojada.</li>
+                            <li><i class="fa fa-star"></i> Ilhas Gastrônomicas.</li>                                                       
+                            <li><i class="fa fa-glass"></i> Wellcome Drinks.</li>
+                            <li><i class="fa fa-money"></i> Preço Justo.</li>
+                        </ul>
+                    </div>
+                    <div class="pricing-box-footer">
+                        <%= link_to "Fale Conosco", site_contato_path, class: "btn btn-primary btn-ar btn-lg" %>
+                    </div>
+                </div>
+            </div>    
+        </div>       
+    </section>
+</div> <!-- container -->
+
+<script type="text/javascript">
+/* <![CDATA[ */
+var google_conversion_id = 978018489;
+var google_custom_params = window.google_tag_params;
+var google_remarketing_only = true;
+/* ]]> */
+</script>
+<script type="text/javascript" src="//www.googleadservices.com/pagead/conversion.js">
+</script>
+<noscript>
+<div style="display:inline;">
+<img height="1" width="1" style="border-style:none;" alt="" src="//googleads.g.doubleclick.net/pagead/viewthroughconversion/978018489/?value=0&amp;guid=ON&amp;script=0"/>
+</div>
+</noscript>

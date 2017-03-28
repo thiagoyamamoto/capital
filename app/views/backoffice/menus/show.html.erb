@@ -1,0 +1,56 @@
+<div class="row">
+    <div class="col-lg-12">
+        <h1 class="page-header">Cardápio</h1>
+    </div>
+    <!-- /.col-lg-12 -->
+</div>
+<!-- /.row -->
+<div class="row">
+    <div class="col-lg-12">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <div class="row">
+                    <div class="col-md-8">   
+                        <h4><%= @menu.title %></h4>
+                    </div>
+                    <div class="col-md-4 text-right">
+                        <%= link_to edit_backoffice_menu_path(@menu), class: "btn btn-primary" do %>
+                            <i class="fa fa-edit"></i> Editar
+                        <% end %>
+                        <%= link_to url_for(:back), class: "btn btn-default" do %>
+                            <i class="fa fa-mail-reply"></i> Voltar
+                        <% end %>                        
+                    </div>
+                </div>
+            </div>
+            <!-- /.panel-heading -->
+            <div class="panel-body">
+                <div class="row">                    
+                    <div class="col-md-4">                        
+                        <h4>Título:</h4>
+                        <p><%= @menu.title %></p>
+                        <h4>Descrição:</h4>
+                        <p><%= @menu.description %></p>                                    
+                    </div>                            
+                    <div class="col-md-4">
+                        <h4>Bebidas:</h4>
+                        <ul>
+                            <% @menu.drinks.each do |d| %>
+                                <li><%= d.name %></li>                                      
+                            <% end %>
+                        </ul>
+                        <h4>Gastronômicos:</h4>
+                        <ul>
+                            <% @menu.foods.each do |food| %>
+                                <li><%= food.name %></li>
+                            <% end %>
+                        </ul>
+                    </div>                                   
+                </div><!-- row -->
+            </div>
+            <!-- /.panel-body -->
+        </div>
+        <!-- /.panel -->
+    </div>
+    <!-- /.col-lg-12 -->
+</div>

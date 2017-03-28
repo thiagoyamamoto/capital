@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+   <title>Capital Gastronômica - Admin</title>
+	  <%= stylesheet_link_tag    'application', media: 'all'%>
+	  <%= stylesheet_link_tag    'backoffice', media: 'all'%>
+  	<%= javascript_include_tag 'application'%>
+  	<%= javascript_include_tag 'backoffice'%>
+	  <%= csrf_meta_tags %>
+
+</head>
+
+<body>
+
+    <div id="wrapper">
+
+        <%= render partial: "layouts/backoffice_shared/navigation" %>
+        <!-- Page Content -->
+        <div id="page-wrapper">         
+           <%=yield%>
+        </div>
+        <!-- /#page-wrapper -->
+
+    </div>
+    <script>
+      <% if notice != nil %>
+        $.notify("<%= notice %>", { position : "top right", className: "success"});
+        $.notify("<%= alert %>", { position : "top right", className: "danger"});
+      <% end %>
+    </script>
+</body>
+
+</html>

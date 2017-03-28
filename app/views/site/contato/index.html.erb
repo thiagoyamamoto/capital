@@ -1,0 +1,162 @@
+<header class="main-header">
+    <div class="container">
+        <h1 class="page-title">Orçamento</h1>
+
+        <ol class="breadcrumb pull-right">
+            <li><%= link_to "Home", root_path %></li>
+            <li class="active">Orçamento</li>
+        </ol>
+    </div>
+</header>
+
+<div class="container">
+    <div class="row animated fadeInUp animation-delay-10">
+        <div class="col-md-12">
+            <h2 class="section-title no-margin-top">Estamos ansiosos para atendê-lo. Fale Conosco!</h2>
+        </div>
+        <div class="col-md-8">        
+            <section>         
+                <!-- /.row -->
+                <% if @request.errors.any? %>
+                    <div class="alert alert-danger">
+                        <ul>
+                            <% @request.errors.full_messages.each do |error| %>
+                            
+                               <li> <%= error %> </li>
+                            
+                            <% end %>
+                        </ul>
+                    </div>
+                <% end %>   
+			    <%= form_for([:site, @request], url: site_contato_index_path(@request)) do |f| %>
+                    <div class="form-group">                        
+                        <label for="name">*Nome</label>
+                        <%= f.text_field :name, class:"form-control", placeholder: "Ex. João da Silva" %>                        
+                    </div>
+                    <div class="form-group">
+                        <label for="email">*E-mail</label>
+                        <%= f.text_field :email, class:"form-control", placeholder: "Ex. joao@email.com" %>                                                
+                    </div>		
+					<div class="form-group">
+						<label for="phone">*Telefone</label>
+                        <%= f.text_field :phone, class:"form-control", placeholder: "Ex. (11) 99999-9999" %>                                                						
+					</div>		
+                    <div>
+                        <label>O Evento é para empresa?</label>
+                        <div>
+                            <input type="radio" name="empresa" id="empresa-sim">
+                            <label for="empresa-sim">Sim</label>
+                            <input type="radio" name="empresa" id="empresa-nao">
+                            <label for="empresa-nao">Não</label>
+                        </div>
+                    </div>
+                    <div class="form-group" id="div-empresa">
+                        <label for="phone">Nome da Empresa</label>
+                        <%= f.text_field :company, class:"form-control", placeholder: "Ex. Joao Company LTDA." %>                                                                        
+                    </div>  
+                    <br>		
+					<fieldset>
+						<legend>Conte um pouco sobre o evento!</legend>
+						<div class="row">
+							<div class="form-group col-md-4">
+								<label for="guest">Número de Convidados</label>
+                                <%= f.text_field :guest, class:"form-control", placeholder: "Ex. 45" %>                                                                    				
+							</div>
+							<div class="form-group col-md-4">
+								<label for="category">Tipo do Evento</label>
+								<%= f.collection_select :category_id, @categories, :id, :description, {}, { class: 'form-control' } %>
+							</div>
+							<div class="form-group col-md-4">
+								<label for="InputData">Data do Evento</label>
+                                <%= f.text_field :date, class:"form-control", placeholder: "dd/mm/aaaa"%> 								
+							</div>
+						</div>
+					</fieldset>
+                    <div class="form-group">
+                        <label for="InputMessage">*Mensagem</label>
+                        <%= f.text_area :message, class:"form-control", placeholder: "Deixe uma mensagem que logo retornaremos!", rows: 8%>                                                                                                          
+                    </div>
+                    <button type="submit" class="btn btn-ar btn-lg btn-primary botao">Solicitar Orçamento!</button>
+                    <div class="clearfix"></div>
+                <% end %>
+            </section>
+        </div>
+
+        <div class="col-md-4">
+            <section>
+                <div class="panel panel-primary">
+                    <div class="panel-heading"><i class="fa fa-info-circle"></i> Informações</div>
+                    <div class="panel-body">
+                        <h4 class="section-title no-margin-top">Contatos</h4>
+                        <address>
+                            <strong>Capital Gastronômica</strong><br>
+                            <i class="fa fa-phone"></i><abbr title="Telefone"> Tel.</abbr> (11) 5668-7120 <br>
+                            <i class="fa fa-phone"></i><abbr title="Telefone"> Tel.</abbr> (11) 94787-7777 <i>(Whatsapp)</i><br>
+                            <i class="fa fa-envelope"></i> E-mail: <a href="#">contato@capitalgastronomica.com.br</a><br>                            					
+                        </address>
+	                     <!-- Business Hours -->
+                        <h4 class="section-title no-margin-top">Localização</h4>
+							<i class="fa fa-home"></i> Rua Stefano Franceschini, 138 <br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;CEP 04293-037 - Saúde - São Paulo/SP <br><br>	
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3655.508159590866!2d-46.61280966702193!3d-23.621965974146654!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce5b74a5bc814f%3A0x398cfc305fa9712!2sRua+Stefano+Franceschini%2C+138+-+Sa%C3%BAde%2C+S%C3%A3o+Paulo+-+SP%2C+04293-037!5e0!3m2!1spt-PT!2sbr!4v1482791385705" width="355" height="300" frameborder="0" style="border:0"></iframe>
+					</div>
+                </div>				
+            </section>
+        </div>
+    </div>    
+</div> <!-- container -->
+
+<script>
+    $().ready(function(){
+        if ($("#request_company").val() == ""){            
+            $("#div-empresa").hide();
+        }else{
+            $("#empresa-sim").prop("checked", true);
+        }
+
+        $("#empresa-sim").on('click',function(){
+            $("#div-empresa").slideDown();
+        });  
+
+        $("#empresa-nao").on('click',function(){
+            $("#div-empresa").slideUp();
+        });  
+
+        var SPMaskBehavior = function (val) {
+            return val.replace(/\D/g, '').length === 11 ? '(00) 00000-0000' : '(00) 0000-00009';
+        },
+        spOptions = {
+            onKeyPress: function(val, e, field, options) {
+        field.mask(SPMaskBehavior.apply({}, arguments), options);
+            }
+        };
+        
+        $('#request_phone').mask(SPMaskBehavior, spOptions);
+        
+        $('#request_date').datepicker({minDate: 0,dateFormat: 'dd/mm/yy',
+        dayNames: ['Domingo','Segunda','Terça','Quarta','Quinta','Sexta','Sábado'],
+        dayNamesMin: ['D','S','T','Q','Q','S','S','D'],
+        dayNamesShort: ['Dom','Seg','Ter','Qua','Qui','Sex','Sáb','Dom'],
+        monthNames: ['Janeiro','Fevereiro','Março','Abril','Maio','Junho','Julho','Agosto','Setembro','Outubro','Novembro','Dezembro'],
+        monthNamesShort: ['Jan','Fev','Mar','Abr','Mai','Jun','Jul','Ago','Set','Out','Nov','Dez'],
+        nextText: 'Próximo',
+        prevText: 'Anterior'});
+    });
+</script>
+<script type="text/javascript">
+/* <![CDATA[ */
+var google_conversion_id = 978018489;
+var google_custom_params = window.google_tag_params;
+var google_remarketing_only = true;
+/* ]]> */
+</script>
+<script type="text/javascript" src="//www.googleadservices.com/pagead/conversion.js">
+</script>
+<noscript>
+<div style="display:inline;">
+<img height="1" width="1" style="border-style:none;" alt="" src="//googleads.g.doubleclick.net/pagead/viewthroughconversion/978018489/?value=0&amp;guid=ON&amp;script=0"/>
+</div>
+</noscript>
+
+
+<%= javascript_include_tag 'site/jquery.mask.min'%>
+    

@@ -1,0 +1,89 @@
+<div class="row">
+    <div class="col-lg-12">
+        <h1 class="page-header"><%= action %></h1>
+    </div>
+    <!-- /.col-lg-12 -->
+</div>
+<!-- /.row -->
+<% if @menu.errors.any? %>
+    <div class="alert alert-danger">
+        <% @menu.errors.full_messages.each do |error| %>
+            <div>
+                <%= error %>
+            </div>
+        <% end %>
+    </div>
+<% end %>
+<div class="row">
+    <div class="col-lg-12">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4>Preencha as Informações</h4>
+            </div>
+            <!-- /.panel-heading -->
+            <div class="panel-body">
+                <%= form_for([:backoffice, @menu]) do |f| %>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">                            
+                                <label for="service">Serviço</label>
+                                <%= f.collection_select :service_id, @services, :id, :title, {}, { class: 'form-control' } %>                                
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="title">Título</label>
+                                <%= f.text_field :title, class:"form-control", placeholder: "Digite o título do serviço" %>
+                            </div>                                
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12 form-group">
+                            <label for="descricao">Descrição</label>
+                            <%= f.text_area :description, class:"form-control", placeholder: "Digite a descrição do serviço", rows: 10 %>
+                        </div>   
+                    </div>                            
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <h4>Bebidas</h4>
+                                </div>
+                                <div class="panel-body">
+                                    <div id="drinks">   
+                                        <%= f.fields_for :drinks do |p| %>
+                                          <%= render partial: "backoffice/menus/shared/drinks_fields", locals: { f: p } %>
+                                        <% end %>
+                                        <%= link_to_add_association('Adicionar Bebida', f, :drinks, partial: 'backoffice/menus/shared/drinks_fields',class: 'btn btn-primary') %>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <h4>Gastronômicos</h4>
+                                </div>
+                                <div class="panel-body">
+                                    <div id="foods">   
+                                        <%= f.fields_for :foods do |p| %>
+                                            <%= render partial: "backoffice/menus/shared/foods_fields", locals: { f: p } %>
+                                        <% end %>
+                                        <%= link_to_add_association('Adicionar Comida', f, :foods, partial: 'backoffice/menus/shared/foods_fields', class: 'btn btn-primary') %>
+                                    </div>
+                                </div>
+                            </div>                        
+                        </div>    
+                    </div>                           
+                    <div class="form-group">
+                        <%= f.submit "Salvar", class: "btn btn-success btn-lg",  data: {confirm: "Você realmente deseja salvar o cardápio?"} %>
+                        <%= link_to "Cancelar", url_for(:back), class: "btn btn-default btn-lg" %>
+                    </div>
+                <% end %>
+            </div>
+            <!-- /.panel-body -->
+        </div>
+        <!-- /.panel -->
+    </div>
+    <!-- /.col-lg-12 -->
+</div>

@@ -1,0 +1,408 @@
+<section class="carousel-section">
+    <div id="carousel-example-generic" class="carousel carousel-razon slide" data-ride="carousel" data-interval="5000">
+        <!-- Indicators -->
+        <ol class="carousel-indicators">
+            <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+            <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+            <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+        </ol>
+
+        <!-- Wrapper for slides -->
+        <div class="carousel-inner">
+            <div class="item active">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-6 col-sm-7">
+                            <div class="carousel-caption">
+                                <div class="carousel-text">
+                                   <h1 class="animated fadeInDownBig animation-delay-7 carousel-title">Buffet Completo</h1>
+                                   <h2 class="animated fadeInDownBig animation-delay-5  crousel-subtitle">Nós deixamos tudo pronto, inclusive o café</h2>
+                                   <ul class="list-unstyled carousel-list">
+                                       <li class="animated bounceInLeft animation-delay-11"><i class="fa fa-check"></i>Eficiência</li>
+                                       <li class="animated bounceInLeft animation-delay-13"><i class="fa fa-check"></i>Pontualidade</li>
+                                       <li class="animated bounceInLeft animation-delay-15"><i class="fa fa-check"></i>Responsabilidade</li>
+                                   </ul>
+                                   <p class="animated fadeInUpBig animation-delay-17">
+                                   Oferecemos o que há de mais <span>moderno</span> para sua festa. 
+                                   Contamos com a experiência de 12 anos de nossa <span>cheff Paula</span> para assinar o seu cardápio.</p>
+                               </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-sm-5 hidden-xs carousel-img-wrap">
+                            <div class="carousel-img">
+                                <%= image_tag "carrousel/cafe.jpg", class:"img-responsive animated bounceInUp animation-delay-3", alt:"Image" %>                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-6 col-sm-8">
+                            <div class="carousel-caption">
+                                <div class="carousel-text">
+                                   <h1 class="animated fadeInDownBig animation-delay-7 carousel-title">Seu evento personalizado</h1>
+                                   <h2 class="animated fadeInDownBig animation-delay-5  crousel-subtitle">
+                                   Seja como for ou onde for... </h2>
+                                   <ul class="list-unstyled carousel-list">
+                                       <li class="animated bounceInLeft animation-delay-11"><i class="fa fa-check"></i>Pratos Diferenciados</li>
+                                       <li class="animated bounceInLeft animation-delay-13"><i class="fa fa-check"></i>Decoração Arrojada</li>
+                                       <li class="animated bounceInLeft animation-delay-15"><i class="fa fa-check"></i>Equipe Treinada</li>
+                                   </ul>
+                                   <p class="animated fadeInUpBig animation-delay-17">
+                                   Mesmo que você não tenha a estrutura necessária, tornamos viável
+                                   <span>seu evento</span>. 
+                                   Providenciamos <span>todo o material</span> para a instalação de cozinha, salão e recepção.</p>
+                               </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-sm-4 hidden-xs carousel-img-wrap">
+                            <div class="carousel-img">
+                                <%= image_tag("carrousel/temperos.jpg", class:"img-responsive animated bounceInUp animation-delay-3", alt:"Image") %>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-6 col-md-7 col-sm-9">
+                            <div class="carousel-caption">
+                                <div class="carousel-text">
+                                   <h1 class="animated fadeInDownBig animation-delay-7 carousel-title">Desenvolvimento</h1>
+                                   <h2 class="animated fadeInDownBig animation-delay-5  crousel-subtitle">De acordo com sua necessidade...</h2>
+                                   <ul class="list-unstyled carousel-list">
+                                       <li class="animated bounceInLeft animation-delay-11"><i class="fa fa-check"></i>
+                                       Elaboração de Cardápios
+                                       </li>
+                                       <li class="animated bounceInLeft animation-delay-13"><i class="fa fa-check"></i>
+                                        Ilhas Gastrônomicas
+                                       </li>
+                                       <li class="animated bounceInLeft animation-delay-15"><i class="fa fa-check"></i>
+                                       Wellcome Drinks</li>
+                                   </ul>
+                                   <p class="animated fadeInUpBig animation-delay-17">
+                                   Produziremos seu evento, desde a <span>recepção</span> com wellcome drinks até o <span>deslumbre</span>
+                                   dos cardápios mais elaborados, <span>finalizando</span> com o delicioso café colonial.</p>
+                               </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-md-5 col-sm-3 hidden-xs carousel-img-wrap">
+                            <div class="carousel-img">
+                                <%= image_tag("carrousel/tacas.jpg", class:"img-responsive animated bounceInUp animation-delay-3", alt:"Image")%>                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Controls -->
+        <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
+            <span class="glyphicon glyphicon-chevron-left"></span>
+        </a>
+        <a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
+            <span class="glyphicon glyphicon-chevron-right"></span>
+        </a>
+    </div>
+</section> <!-- carousel -->
+
+<section class="margin-bottom">
+	<div class="container">
+       <h2 class="section-title">O que nós fazemos? </h2>
+       <div class="bxslider-controls">
+            <span id="bx-prev3"></span>
+            <span id="bx-next3"></span>
+        </div>
+        <ul class="bxslider" id="servicos">
+        	<% @servicos.each_with_index do |s, index| %>
+            <li>
+              <div class="content-box box-black animated fadeInUp animation-delay-10 <%= "box-primary" if index%2==0 %>" style="height:394px">
+                   <%= image_tag s.picture(:medium), alt:"${s.description}" ,class:"img-responsive" %>                   
+                    <h4 class="content-box-title"><%= s.title %></h4>
+                    <p><%= truncate(s.description, length: 120) %></p>
+                     <%= link_to"Saiba Mais", site_path(s.id), { :class=>"btn btn-ar btn-default",  :rel => "tooltip", 'data-toggle'=>"tooltip", 'data-placement'=>"top", :title=>"" ,
+                        'data-original-title'=>"Saiba mais sobre o nosso serviço de #{s.title}"} %>                     
+                </div>
+            </li>
+          <% end %>          
+        </ul>        
+    </div>
+</section>
+
+
+<section class="section-lines">
+    <div class="container">
+    <h2 class="lead lead-lg text-center primary-color margin-bottom">Conheça a <strong>Capital Gastrônomica</strong> e se surpreenda!</h2>
+       <div class="row" style="margin-bottom:20px;">
+            <div class="col-md-6">
+                <h2 class="no-margin-top">Sobre nós</h2>
+                <p style="text-align:justify;">Com o objetivo de atender nossos clientes com excelência
+                fundamos a <strong>Capital Gastrônomica</strong>. Focada em satisfazer todas suas necessidades e desejos, 
+                produzimos com eficiência, qualidade, pontualidade e honestidade o seu evento com um preço justo. </p>
+                <p style="text-align:justify;">Nossa equipe é treinada para atender, montar, conduzir e finalizar sua festa. Tudo em conexão direta com o cliente.
+                Desenvolvemos cardápios diversos, inclusive de alta gastronomia.</p>
+
+            </div>
+            <div class="col-md-6">
+                <div class="panel-group" id="accordion">
+                  <div class="panel panel-default">
+                    <div class="panel-heading panel-heading-link">
+                        <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
+                          <i class="fa fa-bullseye"></i> Missão
+                        </a>
+                    </div>
+                    <div id="collapseOne" class="panel-collapse collapse in">
+                      <div class="panel-body">
+                        <p>Superar as expectativas objetivas e subjetivas de nossos clientes em agilidade e qualidade com eficiência.</p>                        
+                      </div>
+                    </div>
+                  </div>
+                  <div class="panel panel-default">
+                    <div class="panel-heading panel-heading-link">
+                        <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" class="collapsed">
+                          <i class="fa fa-eye"></i> Visão
+                        </a>
+                    </div>
+                    <div id="collapseTwo" class="panel-collapse collapse">
+                      <div class="panel-body">
+                        <p>Ser reconhecida como o melhor buffet no segmento gastronômico.</p>                        
+                      </div>
+                    </div>
+                  </div>
+                  <div class="panel panel-default">
+                    <div class="panel-heading panel-heading-link">
+                        <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree" class="collapsed">
+                          <i class="fa fa-heart"></i> Valores
+                        </a>
+                    </div>
+                    <div id="collapseThree" class="panel-collapse collapse">
+                      <div class="panel-body">
+                        <p>Foco no cliente, respeito, ética, comprometimento e pontualidade.</p>                        
+                      </div>
+                    </div>
+                  </div>
+                </div>
+            </div>
+       </div>
+    </div>
+</section>
+
+<div class="container">    
+   <section class="margin-bottom">
+       <h2 class="section-title" style="margin-top:0px;">Galeria de Fotos</h2>
+       <div class="bxslider-controls">
+            <span id="bx-prev4"></span>
+            <span id="bx-next4"></span>
+        </div>
+        <ul class="bxslider" id="latest-works">        
+        <li>
+            <div class="img-caption-ar">
+                <%= image_tag "galeria/galeria-tacos.jpg", class:"img-responsive", alt:"Tacos"%>              
+                <div class="caption-ar">
+                    <div class="caption-content">
+                        <%= link_to site_galeria_path, class:"animated fadeInDown" do %>
+                          <i class="fa fa-search"></i>Veja mais Fotos! 
+                        <% end %>
+                    </div>
+                </div>
+            </div>
+          </li>
+          <li>
+            <div class="img-caption-ar">
+                <%= image_tag "galeria/galeria-panqueca.jpg", class:"img-responsive",alt:"Panqueca"  %>                
+                <div class="caption-ar">
+                    <div class="caption-content">
+                        <%= link_to site_galeria_path, class:"animated fadeInDown" do %>
+                          <i class="fa fa-search"></i>Veja mais Fotos! 
+                        <% end %>
+                    </div>
+                </div>
+            </div>
+        </li>
+        <li>
+            <div class="img-caption-ar">                
+                <%= image_tag  "galeria/galeria-doce.jpg", class:"img-responsive", alt:"Doces" %>
+                <div class="caption-ar">
+                    <div class="caption-content">
+                        <%= link_to site_galeria_path, class:"animated fadeInDown" do %>
+                          <i class="fa fa-search"></i>Veja mais Fotos! 
+                        <% end %>
+                    </div>
+                </div>
+            </div>
+          </li>
+          <li>
+            <div class="img-caption-ar">
+                <%= image_tag "galeria/galeria-entrada.jpg", class:"img-responsive", alt:"Entrada"  %>                
+                <div class="caption-ar">
+                    <div class="caption-content">
+                        <%= link_to site_galeria_path, class:"animated fadeInDown" do %>
+                          <i class="fa fa-search"></i>Veja mais Fotos! 
+                        <% end %>
+                    </div>
+                </div>
+            </div>
+        </li>     
+          <li>
+            <div class="img-caption-ar">                
+                <%= image_tag  "galeria/galeria-bolo-chocolate.jpg", class:"img-responsive", alt:"Bolo de chocolate"%>
+                <div class="caption-ar">
+                    <div class="caption-content">
+                        <%= link_to site_galeria_path, class:"animated fadeInDown" do %>
+                          <i class="fa fa-search"></i>Veja mais Fotos! 
+                        <% end %>
+                    </div>
+                </div>
+            </div>
+        </li>
+        <li>
+            <div class="img-caption-ar">
+                <%= image_tag "galeria/galeria-doce2.jpg", class:"img-responsive", alt:"Doces" %>                
+                <div class="caption-ar">
+                    <div class="caption-content">
+                        <%= link_to site_galeria_path, class:"animated fadeInDown" do %>
+                          <i class="fa fa-search"></i>Veja mais Fotos! 
+                        <% end %>
+                    </div>
+                </div>
+            </div>
+          </li>
+          <li>
+            <div class="img-caption-ar">
+                <%= image_tag "galeria/galeria-martini.jpg", class:"img-responsive", alt:"Martini" %>                
+                <div class="caption-ar">
+                    <div class="caption-content">
+                        <%= link_to site_galeria_path, class:"animated fadeInDown" do %>
+                          <i class="fa fa-search"></i>Veja mais Fotos! 
+                        <% end %>
+                    </div>
+                </div>
+            </div>
+        </li>
+        <li>
+            <div class="img-caption-ar">
+                <%= image_tag "galeria/galeria-festa-junina.jpg", class:"img-responsive", alt:"Festa Junina" %>                
+                <div class="caption-ar">
+                    <div class="caption-content">
+                        <%= link_to site_galeria_path, class:"animated fadeInDown" do %>
+                          <i class="fa fa-search"></i>Veja mais Fotos! 
+                        <% end %>
+                    </div>
+                </div>
+            </div>
+          </li>
+          <li>
+            <div class="img-caption-ar">                
+                <%= image_tag  "galeria/galeria-lanche.jpg", class:"img-responsive", alt:"Lanches"%>
+                <div class="caption-ar">
+                    <div class="caption-content">
+                        <%= link_to site_galeria_path, class:"animated fadeInDown" do %>
+                          <i class="fa fa-search"></i>Veja mais Fotos! 
+                        <% end %>
+                    </div>
+                </div>
+            </div>
+        </li>
+        <li>
+            <div class="img-caption-ar">
+                <%= image_tag "galeria/galeria-tacas.jpg", class:"img-responsive", alt:"Taças"  %>                
+                <div class="caption-ar">
+                    <div class="caption-content">
+                        <%= link_to site_galeria_path, class:"animated fadeInDown" do %>
+                          <i class="fa fa-search"></i>Veja mais Fotos! 
+                        <% end %>
+                    </div>
+                </div>
+            </div>
+          </li>
+        </ul>
+   </section>
+
+   <section>
+       <p class="slogan text-center">Trabalhos realizados com muita dedicação, profissionalismo e <span>paixão</span>. 
+       Queremos sempre entregar seu evento com <span>eficiêcia</span> e <span>pontualidade</span>. 
+       Contamos com profissionais qualificados, com mais de 20 anos de <span>experiência</span> na área gastronômica.</p>        
+   </section>
+
+</div>
+<div class="container">    
+   <section class="margin-bottom">
+      <h2 class="section-title" style="margin-top:0px;">Nossos Clientes</h2>
+      <div class="row">        
+        <div class="col-md-12">
+            <% @clientes.each do |c| %>
+              <div class="col-md-3 col-sm-3 col-xs-6"><%= image_tag c.picture(:thumb), class:"img-responsive" %></div>
+            <% end %>            
+        </div>        
+    </div>
+  </section>
+</div>
+
+<section class="section-lines">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 padding-40">
+                <p class="slogan text-center no-margin">Venha fazer o seu evento com a <span>Capital Gastronômica!</span> Estamos ansiosos para atendê-lo!</p>
+                <br>
+                <p class="text-center">
+                  <%= link_to site_contato_path, class:"button button-large button-plain button-border button-box" do  %>
+                    <i class="fa fa-comments"></i> Faça o seu Orçamento! <b>Clique aqui!</b>
+                  <% end %>
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div id="back-top">
+    <a href="#header"><i class="fa fa-chevron-up"></i></a>
+</div>
+
+<?php include "footer.php" ?>
+
+</div> <!-- boxed -->
+</div> <!-- sb-site -->
+
+
+<div class="modal fade" id="banner">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      </div>
+      <div class="modal-body" style="text-align:center">
+        <%= image_tag "banner.png", alt:"Festa Junina" %>        
+      </div>     
+	  <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+<script type="text/javascript">
+$(document).ready(function(){
+    $('[data-toggle="tooltip"]').tooltip();
+  /* $('#banner').modal(
+    {keyboard:true,
+    backdrop:true}
+    );*/
+});
+</script>
+<script type="text/javascript">
+/* <![CDATA[ */
+var google_conversion_id = 978018489;
+var google_custom_params = window.google_tag_params;
+var google_remarketing_only = true;
+/* ]]> */
+</script>
+<script type="text/javascript" src="//www.googleadservices.com/pagead/conversion.js">
+</script>
+<noscript>
+<div style="display:inline;">
+<img height="1" width="1" style="border-style:none;" alt="" src="//googleads.g.doubleclick.net/pagead/viewthroughconversion/978018489/?value=0&amp;guid=ON&amp;script=0"/>
+</div>
+</noscript>

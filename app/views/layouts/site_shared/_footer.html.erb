@@ -1,0 +1,73 @@
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/pt_BR/sdk.js#xfbml=1&version=v2.3";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+<aside id="footer-widgets">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <h3 class="footer-widget-title">Mapa do Site</h3>
+                <ul class="list-unstyled three_cols">
+                  <li><%= link_to "Home", root_path %></li>
+                  <li><%= link_to "Sobre", site_sobre_path %></li>
+    			        <li><%= link_to "Serviços", site_servicos_path %></li>
+                  <li><%= link_to "Clientes", site_clientes_path %></li>
+    			        <li><%= link_to "Depoimentos", site_depoimentos_path %></li>                  
+                  <li><%= link_to "Galeria", site_galeria_path %></li>
+                  <li><%= link_to "Orçamento", site_contato_path %></li> 
+                </ul>	
+                <br>			
+  				      <div class="fb-like" data-href="https://www.facebook.com/pages/Capital-Gastron%C3%B4mica/915617415126383" 
+  						  data-layout="standard" data-width="350" data-action="like" data-show-faces="true" data-share="true"></div>				
+            </div>
+            <div class="col-md-4">
+               	<div class="footer-widget">
+                    <h3 class="footer-widget-title"> Contatos </h3>
+                    <address>
+                        <strong>Capital Gastronômica</strong><br>    			
+                        <i class="fa fa-phone"></i><abbr title="Telefone"> Tel:</abbr> (11) 5668-7120 <br>
+                        <i class="fa fa-phone"></i><abbr title="Telefone"> Tel:</abbr> (11) 94787-7777 <i>(Whatsapp)</i><br>
+                        <i class="fa fa-envelope"></i> E-mail: <%= link_to site_contato_path do %> contato@capitalgastronomica.com.br<% end %><br>
+						            <i class="fa fa-home"></i> Rua Stefano Franceschini, 138 - Saúde - São Paulo/SP
+                    </address>                      
+             	</div>
+            </div>
+            <div class="col-md-4">
+                <div class="footer-widget">
+                	<a href="#">
+                    	<h3 class="footer-widget-title">Galeria de Fotos</h3>
+                    </a>
+                    <div class="row">
+                        <div class="col-lg-6 col-md-6 col-sm-3 col-xs-6">
+                            <%= link_to site_galeria_path, class:"thumbnail" do %>
+                              <%= image_tag "galeria/galeria-lanche.jpg", class:"img-responsive", alt:"Galeria" %>                              
+                            <% end %>
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-sm-3 col-xs-6">
+                            <%= link_to site_galeria_path, class:"thumbnail" do %>                            
+                              <%= image_tag "galeria/galeria-martini.jpg", class:"img-responsive", alt:"Martini"%>                            
+                            <% end %>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div> <!-- row -->
+    </div> <!-- container -->
+</aside> <!-- footer-widgets -->
+<footer id="footer">
+    <p>&copy; <%= Date.today.year %> - <a href="#">Capital Gastronômica </a>, Todos os direitos reservados	.</p>
+</footer>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-59024837-1', 'auto');
+  ga('send', 'pageview');
+
+</script>

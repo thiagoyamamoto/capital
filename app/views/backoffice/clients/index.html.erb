@@ -1,0 +1,62 @@
+<div class="row">
+    <div class="col-lg-12">
+        <h1 class="page-header">Clientes</h1>
+    </div>
+    <!-- /.col-lg-12 -->
+</div>
+<!-- /.row -->
+<div class="row">
+    <div class="col-lg-12">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <div class="row">
+                    <div class="col-md-8">   
+                        <h4>Clientes Cadastrados</h4>
+                    </div>
+                    <div class="col-md-4 text-right">
+                        <%= link_to new_backoffice_client_path, class: "btn btn-success", title: "Cadastrar Cliente" do %>
+                            <i class="fa fa-plus"></i> Novo
+                        <% end %>
+                    </div>
+                </div>
+            </div>
+            <!-- /.panel-heading -->
+            <div class="panel-body">
+                <table width="100%" class="table table-striped table-bordered table-hover">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Imagem</th>
+                            <th>Nome</th>
+                            <th>Descrição</th>
+                            <th>Website</th>                            
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    	<% @clients.each_with_index do |c,index| %>
+                        <tr>
+                            <td><%= index+1 %></td>
+                            <td><%= image_tag c.picture(:thumb) %></td>
+                            <td><%= c.name %></td>
+                            <td><%= truncate(c.description, length: 150) %></td>                            
+                            <td><%= c.website %></td>
+                            <td width="90">
+                                <%= link_to edit_backoffice_client_path(c), class: "btn btn-primary btn-sm", title: "Editar" do %>
+                                    <i class="fa fa-edit"></i>
+                                <% end %>        
+                                <%= link_to backoffice_client_path(c), method: :delete, class: "btn btn-danger btn-sm", data: {confirm: "Você realmente deseja excluir o #{c.name} ?"}, title: "Excluir" do %>
+                                        <i class="fa fa-trash"></i>
+                                <% end %>  
+                            </td>
+                        </tr>
+                        <% end %>
+                    </tbody>
+                </table>
+            </div>
+            <!-- /.panel-body -->
+        </div>
+        <!-- /.panel -->
+    </div>
+    <!-- /.col-lg-12 -->
+</div>

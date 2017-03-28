@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    
+
+    <%= favicon_link_tag 'favicon.ico' %>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="description" content="Capital Gastrônomica é uma empresa de buffet especializada na organização de eventos, festas e recepções corporativas, com atendimento e cardápio customizados para seus clientes. ">
+    <meta name="keywords" content="capital gastronomica, buffet corporativo, eventos, congressos, são paulo, comemorações,corporativas, buffet a domicilio ">
+    <meta name="title" content="capital gastronomica, buffet corporativo, eventos, congressos, são paulo, comemorações,corporativas, buffet a domicilio ">
+    <meta name="author" content="Capital Gastrônomica">
+    <meta name="language" content="portuguese, PT-BR">
+  
+    <title>Buffet e Eventos Corporativos - Capital Gastrônomica </title>
+	<%= stylesheet_link_tag    'site/site', media: 'all'%>	  
+    <%= javascript_include_tag 'site/site'%>
+    <%= javascript_include_tag 'site/jquery.cookie'%>
+    <%= javascript_include_tag 'site/bootstrap.min'%>
+    <%= javascript_include_tag 'site/wow.min'%>
+    <%= javascript_include_tag 'site/slidebars'%>
+    <%= javascript_include_tag 'site/jquery.bxslider.min'%>
+    <%= javascript_include_tag 'site/holder'%>
+    <%= javascript_include_tag 'site/buttons'%>
+    <%= javascript_include_tag 'site/styleswitcher'%>
+    <%= javascript_include_tag 'site/jquery.mixitup.min'%>
+    <%= javascript_include_tag 'site/circles.min'%>
+    <%= javascript_include_tag 'site/shCore'%>
+    <%= javascript_include_tag 'site/shBrushXml'%>
+    <%= javascript_include_tag 'site/shBrushJScript'%>    
+	<%= javascript_include_tag 'site/app'%>
+    <%= csrf_meta_tags %>
+    <%= yield :css %>
+</head>
+<body>  
+
+<!-- Preloader -->
+<div id="preloader">
+    <div id="status">&nbsp;</div>
+</div>
+
+    <div id="sb-site">
+        <div class="boxed">
+
+            <%= render partial: "layouts/site_shared/navigation" %>
+            <%=yield%>
+
+            <%= render "layouts/site_shared/footer" %>
+
+        </div> <!-- boxed -->
+    </div> <!-- sb-site -->
+</body>
+
+</html>

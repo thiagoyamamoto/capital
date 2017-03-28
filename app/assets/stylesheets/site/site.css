@@ -1,0 +1,23 @@
+/*
+ *= require_self
+ *= require bootstrap
+ *= require jquery-ui
+ *= require_tree
+ */
+@import url(http://fonts.googleapis.com/css?family=Lato:300,400|Open+Sans:400italic,400,600|Muli:300);
+
+@media only screen and (min-width: 1200px) {
+  /* line 1601, /home/thiago/.rvm/gems/ruby-2.3.0/gems/rails-assets-bootstrap-3.3.7/app/assets/stylesheets/bootstrap/bootstrap.scss */
+  .container {
+    width: 1280px !important;
+  }
+}
+
+.botao {
+		border-radius: 5px !important;			
+		font-size: 25px !important;
+}
+
+.media-left{
+	padding-right: 20px !important;
+}

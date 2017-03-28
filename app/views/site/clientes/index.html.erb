@@ -1,0 +1,30 @@
+<header class="main-header">
+    <div class="container">
+        <h1 class="page-title">Principais Clientes</h1>
+
+        <ol class="breadcrumb pull-right">
+            <li><%= link_to "Home", root_path %></li>
+            <li class="active">Principais Clientes</li>
+        </ol>
+    </div>
+</header>
+
+<div class="container animated fadeInUp animation-delay-10">
+    <div class="row">
+        <div class="col-md-12">
+            <% @clientes.each do |c| %>
+              <div class="media">
+                <a class="media-left" href="#">
+                  <%= image_tag c.picture, class:"media-object", alt: "${c.name}", width: 200  %>                  
+                </a>
+                <div class="media-body">
+                  <h2 class="media-heading"><%= c.name %></h2>
+                  <p><%= truncate(c.description, length: 280) %></p>
+                  <p><strong>Website:</strong> <%= link_to c.website, "http://#{c.website}", target:"_blank" %></p>
+                </div>
+              </div>
+              <hr/>
+            <% end %>                        
+        </div>
+    </div> <!-- row -->
+</div> <!-- container -->

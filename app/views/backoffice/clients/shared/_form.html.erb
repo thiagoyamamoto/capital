@@ -1,0 +1,55 @@
+<div class="row">
+    <div class="col-lg-12">
+        <h1 class="page-header"><%= action %></h1>
+    </div>
+    <!-- /.col-lg-12 -->
+</div>
+<!-- /.row -->
+<% if @client.errors.any? %>
+    <div class="alert alert-danger">
+        <% @client.errors.full_messages.each do |error| %>
+            <div>
+                <%= error %>
+            </div>
+        <% end %>
+    </div>
+<% end %>
+<div class="row">
+    <div class="col-lg-12">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4>Preencha as Informações</h4>
+            </div>
+            <!-- /.panel-heading -->
+            <div class="panel-body">
+                <div class="col-md-6">
+                    <%= form_for([:backoffice, @client],  html: { multipart: true } ) do |f| %>
+                        <div class="form-group">
+                            <label for="name">Nome da empresa</label>
+                            <%= f.text_field :name, class:"form-control", placeholder: "Digite o nome do cliente" %>
+                        </div>
+                        <div class="form-group">
+                            <label for="description">Descrição</label>
+                            <%= f.text_area :description, class:"form-control", placeholder: "Digite a descrição do cliente", rows: 10 %>
+                        </div>
+                        <div class="form-group">
+                            <label for="website">Site</label>
+                            <%= f.text_field :website, class:"form-control", placeholder: "Digite o site da empresa" %>
+                        </div>
+                        <div class="form-group">
+                            <%= image_tag @client.picture(:medium), class: 'img-thumbnail' %>
+                            <%= f.file_field :picture %>
+                        </div>
+                        <div class="form-group">
+                            <%= f.submit "Salvar", class: "btn btn-success btn-lg" %>
+                            <%= link_to "Cancelar", backoffice_clients_path, class: "btn btn-default btn-lg" %>
+                        </div>
+                    <% end %>
+                </div>
+            </div>
+            <!-- /.panel-body -->
+        </div>
+        <!-- /.panel -->
+    </div>
+    <!-- /.col-lg-12 -->
+</div>

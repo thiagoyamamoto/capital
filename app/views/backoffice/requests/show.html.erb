@@ -1,0 +1,67 @@
+<div class="row">
+    <div class="col-lg-12">
+        <h1 class="page-header">Orçamento pelo site</h1>
+    </div>
+    <!-- /.col-lg-12 -->
+</div>
+<!-- /.row -->
+<div class="row">
+    <div class="col-lg-12">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <div class="row">
+                    <div class="col-md-8">   
+                        <h4><%= @request.name %> - <i><%= @request.email %></i></h4>
+                    </div>                    
+                    <div class="col-md-4 text-right">
+                        <%= link_to backoffice_requests_path, class: "btn btn-primary" do %>
+                            <i class="fa fa-arrow-circle-left"></i> Voltar
+                        <% end %>
+                    </div>
+                </div>
+            </div>
+            <!-- /.panel-heading -->
+            <div class="panel-body">
+                <div class="row">
+                    <div class="col-md-6">
+                        <h3>Contato em <%= @request.created_at.strftime("%d/%m/%Y - %H:%M") %></h3>
+                        <table class="table table-striped">
+                            <tr>
+                                <th>Nome</th>
+                                <th>E-mail</th>
+                                <th>Telefone</th>
+                                <th>Empresa</th>
+                            </tr>
+                            <tr>
+                                <td><%= @request.name %></td>
+                                <td><%= @request.email %></td>                        
+                                <td><%= @request.phone %></td>
+                                <td><%= @request.company %></td>
+                            </tr>                            
+                        </table>                        
+                    </div>
+                </div>                    
+                <div class="row">
+                    <div class="col-md-6">
+                        <h3>Evento</h3>
+                        <table class="table table-striped">
+                            <tr>
+                                <th>Data do Evento</th>
+                                <th>Tipo do Evento</th>
+                                <th>Mensagem</th>
+                            </tr>
+                            <tr>
+                                <td><%= @request.date.strftime("%d/%m/%Y") %></td>
+                                <td><%= @request.category.description %></td>
+                                <td><%= @request.message %></td>
+                            </tr>                            
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <!-- /.panel-body -->
+        </div>
+        <!-- /.panel -->
+    </div>
+    <!-- /.col-lg-12 -->
+</div>
